@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 923260c4b476046218e2ff9f059a9622
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _source: {instanceID: 0}
+  - _gunAudioFiles: {fileID: 11400000, guid: 607185955de384b0680be2753f839925, type: 2}
+  - _sniperAudioFiles: {fileID: 11400000, guid: fe837df3ec52e496d9b6580f75291b0d, type: 2}
+  - _assaultRiffleAudioFiles: {fileID: 11400000, guid: f981acd0976474f388714ff2aebb5fca, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
