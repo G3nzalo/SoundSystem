@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa8f787194e54dfa8b2315d2a449eef, type: 3}
+  m_Name: AssaultRiffle
+  m_EditorClassIdentifier: 
+  _audioFile:
+  - {fileID: 8300000, guid: 861426c31e1ba482ca2d820499a687f0, type: 3}
+  - {fileID: 8300000, guid: e7616e7dea93744e4bd6de11ef73b8d7, type: 3}
+  - {fileID: 8300000, guid: dee128e1e5a724a83b8c6a3d6a524167, type: 3}

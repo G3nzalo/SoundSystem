@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa8f787194e54dfa8b2315d2a449eef, type: 3}
+  m_Name: PickablesSkills
+  m_EditorClassIdentifier: 
+  _audioFile:
+  - {fileID: 8300000, guid: 7b9efc450ae884c729d3f3ae0f37e33f, type: 3}
+  - {fileID: 8300000, guid: 7b9efc450ae884c729d3f3ae0f37e33f, type: 3}
+  - {fileID: 8300000, guid: 7b9efc450ae884c729d3f3ae0f37e33f, type: 3}
+  - {fileID: 8300000, guid: 7b9efc450ae884c729d3f3ae0f37e33f, type: 3}
