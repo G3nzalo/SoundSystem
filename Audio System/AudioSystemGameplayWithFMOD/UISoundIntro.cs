@@ -33,12 +33,9 @@ public class UISoundIntro: MonoBehaviour
     [SerializeField] private Button _closePanelCreateGame;
     #endregion
 
-  //  private EventTrigger.Entry _entry = new EventTrigger.Entry();
     private EventTrigger.Entry _clickInputs = new EventTrigger.Entry();
 
     public void PlaySfx() => FmodExtensions.SetSfx("event:/Sounds/UI/Continue");
-
-    //private void OnMouseEnter(BaseEventData pointData) => FmodExtensions.SetSfx(_btnOverSfx);
     private void OnMouseClickInputFields(BaseEventData pointData) => ContinueSfx();
     private void ContinueSfx() => FmodExtensions.SetSfx(_btnContinuePause);
 
@@ -60,33 +57,14 @@ public class UISoundIntro: MonoBehaviour
         EventTrigger triggerCreateSession = _createSession.GetComponent<EventTrigger>();
         EventTrigger triggerClosePlanelCreateGame = _closePanelCreateGame.GetComponent<EventTrigger>();
 
-        //_entry.eventID = EventTriggerType.PointerEnter;
-        //_entry.callback = new EventTrigger.TriggerEvent();
-        //_entry.callback.AddListener(OnMouseEnter);
-
         _clickInputs.eventID = EventTriggerType.PointerClick;
         _clickInputs.callback = new EventTrigger.TriggerEvent();
         _clickInputs.callback.AddListener(OnMouseClickInputFields);
 
         triggerInputFieldRoomName.triggers.Add(_clickInputs);
         triggerInputRegion.triggers.Add(_clickInputs);
-
-        //triggerGameType.triggers.Add(_entry);
-        //triggerCrateSession.triggers.Add(_entry);
-        //triggerCloseTabSessionsList.triggers.Add(_entry);
-
-        //triggerRoomName.triggers.Add(_entry);
-
-        //triggerMap1.triggers.Add(_entry);
         triggerMap1.triggers.Add(_clickInputs);
-
-        //triggerMap2.triggers.Add(_entry);
         triggerMap2.triggers.Add(_clickInputs);
-
-        //triggerRemovePlayer.triggers.Add(_entry);
-        //triggerAddPlayer.triggers.Add(_entry);
-        //triggerCreateSession.triggers.Add(_entry);
-        //triggerClosePlanelCreateGame.triggers.Add(_entry);
 
         _gameType.onClick.AddListener(() => FmodExtensions.SetSfx(_btnHost));
         _newSession.onClick.AddListener(() => FmodExtensions.SetSfx(_btnHost));

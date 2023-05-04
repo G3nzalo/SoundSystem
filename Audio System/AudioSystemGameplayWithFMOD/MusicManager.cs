@@ -7,7 +7,6 @@ public class MusicManager : MonoBehaviour
 
     public enum ZONES {MENU,FOREST , DESERT , TEST};
 
-   // public static void SetZoneMusic(ZONES zone) => setZoneMusic(zone);
     public static void SetStopMusic() => StopMusic();
     public void SetZoneMusic(ZONES zone) => _music.setParameterByName("Ambiences", (int)zone);
  
