@@ -6,9 +6,6 @@ public class TerrainDetect : NetworkKCCProcessor
 {
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private Rigidbody _rb;
-   // [SerializeField] private FMODUnity.StudioEventEmitter eventEmiterRef;
-
-
 
     private Terrain _terrain;
     private int _posX;
@@ -20,31 +17,8 @@ public class TerrainDetect : NetworkKCCProcessor
 
     public void RunStep() => PlayFootstep();
 
-    private void Start()
-    {
-//          FMODUnity.RuntimeManager.AttachInstanceToGameObject(_instance, _playerTransform, _rb);
-    }
-
-    private void PlayFootstep()
-    {
-        /*
-        GetTerrainTexture();
-
-        for (int i = 0; i < _textureValues.Length; i++)
-        {
-            if (_textureValues[i] > 0 && !_isPlaying)
-            {
-                SetStepSound(i);
-                _isPlaying = true;
-            }
-        }
-        _isPlaying = false;
-        */
-    }
-
     private void GetTerrainTexture()
     {
-   //     InitializeTerrainTextures();
         ConvertPosition(_playerTransform.position);
         CheckTexture();
     }
@@ -88,43 +62,33 @@ public class TerrainDetect : NetworkKCCProcessor
         //  0 = piedra //8 = piedra 2 //9 = cemento
         if (index == 0 || index == 8 || index == 9)
         {
-            if (Object.HasInputAuthority)
+            if (!Object.HasInputAuthority)
             {
-                _instance = FMODUnity.RuntimeManager.CreateInstance("event:/Sounds/Player/Footsteps/Footsteps_Concrete");
+                return;
             }
-            else
-            {
-             //   eventEmiterRef.Play();
-            }
+            
+            _instance = FMODUnity.RuntimeManager.CreateInstance("event:/Sounds/Player/Footsteps/Footsteps_Concrete");
 
         }
         // 1 = pasto //  2 = pasto con tierra // 3 = pasto mas crecido // 10 = pasto con tierra 2 // 12 = pasto 2
         if (index == 1 || index == 2 || index == 3 || index == 10 || index == 12)
         {
-            if (Object.HasInputAuthority)
+            if (!Object.HasInputAuthority)
             {
-                _instance = FMODUnity.RuntimeManager.CreateInstance("event:/Sounds/Player/Footsteps/Footsteps_Grass");
-
+                return;
             }
-            else
-            {
-             //   eventEmiterRef.Play();
-            }
+            _instance = FMODUnity.RuntimeManager.CreateInstance("event:/Sounds/Player/Footsteps/Footsteps_Grass");
         }
 
         //4 = tierra //5 = tierra 2 // 6 = tierra 3 // 7 = tierra 4 // 11 = tierra 5 //  13 = tierra sin roca
         if (index == 4 || index == 5 || index == 6 || index == 7 || index == 11 || index == 13)
         {
-            if (Object.HasInputAuthority)
+            if (!Object.HasInputAuthority)
             {
+                return;
+            }
                 _instance = FMODUnity.RuntimeManager.CreateInstance("event:/Sounds/Player/Footsteps/Footsteps_Earth");
-            }
-            else
-            {
-            //    eventEmiterRef.Play();
-            }
         }
-        //_instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(_playerTransform, _rb));
         _instance.start();
 
 

@@ -24,9 +24,6 @@ public class UiSoundsSystem : MonoBehaviour
     [SerializeField] private Button _connectButton;
     [SerializeField] private Button _exitButton;
 
-    //[SerializeField] private MMTouchButton _continueButton;
-    //[SerializeField] private MMTouchButton _leaveButton;
-
     #endregion
 
     #region Privare Variables
@@ -52,9 +49,6 @@ public class UiSoundsSystem : MonoBehaviour
         EventTrigger triggerConnectButton = _connectButton.GetComponent<EventTrigger>();
         EventTrigger triggerExitButton = _exitButton.GetComponent<EventTrigger>();
 
-        //EventTrigger triggerContinue = _continueButton.GetComponent<EventTrigger>();
-        //EventTrigger triggerLeave = _leaveButton.GetComponent<EventTrigger>();
-
         _entry.eventID = EventTriggerType.PointerEnter;
         _entry.callback = new EventTrigger.TriggerEvent();
         _entry.callback.AddListener(OnMouseEnter);
@@ -77,8 +71,6 @@ public class UiSoundsSystem : MonoBehaviour
 
         _hostButton.onClick.AddListener(() => StartGameBtnSounds());
         _connectButton.onClick.AddListener(() => StartGameBtnSounds());
-
-        //   _exitButton.onClick.AddListener(() => LeaveBtnSouns());
     }
 
     private void Update()
@@ -93,34 +85,9 @@ public class UiSoundsSystem : MonoBehaviour
     private void StartGameBtnSounds()
     {
         FmodExtensions.SetSfx(_btnHost);
-//        MusicManager.SetZoneMusic(MusicManager.ZONES.FOREST);
         _entry.callback.RemoveAllListeners();
         _triggerSfxInputFields.callback.RemoveAllListeners();
 
-    }
-
-    //private void LeaveBtnSouns()
-    //{
-    //    MusicManager.SetZoneMusic(MusicManager.ZONES.DESERT);
-    //  //  FmodExtensions.SetSfx(_btnLeave);
-    //}
-
-    private void InPauseSounds()
-    {
-        /*
-        if (_continueButton.CurrentState.ToString() == ButtonStates.ButtonDown.ToString())
-            {
-            FmodExtensions.SetSfx(_btnContinuePause);
-            StopSnapshotPause();
-            }
-        if (_leaveButton.CurrentState.ToString() == ButtonStates.ButtonDown.ToString())
-            {
-            MusicManager.SetStopMusic();
-            MusicManager.SetZoneMusic(MusicManager.ZONES.MENU);
-            FmodExtensions.SetSfx(_btnLeave);
-            StopSnapshotPause();
-            }
-        */
     }
 
     private void CheckPause()

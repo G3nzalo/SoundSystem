@@ -1,6 +1,6 @@
 //using static AdapterFxTrail;
 
-public enum KaizenFX { Sword, Sonic , Default};
+public enum Weapons { Sword, Sonic , Default};
 
 public class FmodExtensions
 {
@@ -8,12 +8,12 @@ public class FmodExtensions
     private static bool _isPressedBtn2 = false;
     private static bool _isPressedBtn3 = false;
 
-    private static KaizenFX _typeKaizenFx;
+    private static Weapons _weapons;
 
     private static FMOD.Studio.EventInstance instanceTrail;
     private static FMOD.Studio.EventInstance instanceInstaKill;
 
-    public static KaizenFX TyperKaizenFx { get => _typeKaizenFx; set => _typeKaizenFx = value; }
+    public static Weapons WeaponType { get => _weapons; set => _weapons = value; }
 
     public static void SetSfx(FMODUnity.EventReference path) => SetInstanceSfx(path);
 
@@ -21,7 +21,7 @@ public class FmodExtensions
 
     public static void SetSfxChangeWeapon(string path , bool is1 , bool is2, bool is3) => SetInstanceSfxChangeWeapon(path , is1, is2 , is3);
 
-    public static void SetTrailSfxKaizen() => SfxTrail();
+    public static void SetTrailSfx() => SfxTrail();
 
     public static void EndTrail() => FinishTrail();
 
@@ -86,7 +86,7 @@ public class FmodExtensions
 
     private static void SfxTrail()
     {
-        if (TyperKaizenFx == KaizenFX.Sonic)
+        if (WeaponType == WeaponFX.Sonic)
         {
             if (IsStoped())
             {

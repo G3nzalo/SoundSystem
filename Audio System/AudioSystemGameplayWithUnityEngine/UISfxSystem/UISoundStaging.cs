@@ -15,10 +15,6 @@ public class UISoundStaging : MonoBehaviour
     [SerializeField] private Button _btnReady;
     [SerializeField] private AudioSource _btnReadySource;
 
-    //[SerializeField] private AudioSource _sourcebtnDisconnect;
-
-    //[SerializeField] private AudioSource _sourcebtnReady;
-
     [SerializeField] private InputField _playerName;
     [SerializeField] private AudioSource _inputFieldsSfxSource;
 

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Audio Files FootSteps", menuName = "Kaizen/AudioFilesFootSteps")]
+[CreateAssetMenu(fileName = "Audio Files FootSteps", menuName = "AudioTools/AudioFilesFootSteps")]
 public class AudioFilesFootSteps : ScriptableObject
 {
     public AudioClip[] concrete = null;
